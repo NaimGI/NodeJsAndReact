@@ -1,0 +1,117 @@
+<%- include("../includes/navigation.ejs") %>
+    <div id="services" class="services section serv">
+        <div class="all-form">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container">
+                        <form class="form-horizontal fr" action="/Donya/info" method="POST" id="f" enctype="multipart/form-data">
+
+
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+                           
+                                    <select class="form-select" aria-label="Default select example" name="typeId">
+                                        <% Real.forEach(p => {%> 
+                                            
+                                            <% if(select===p.field) {%> 
+                                           <option value="<%=p.name%>"><%=p.name%></option>
+                    
+                                           <%}%>
+                                        <%})%>
+                                    </select>
+                                        
+                                       
+                           
+                              
+                            </div>
+                            <!--End user name field-->
+                            <div class="row mb-5">
+
+                                <select class="form-select" aria-label="Default select example" id="country" name="country">
+                                   
+                                  </select>
+                            </div>
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+                                <div class="mb-3">
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple name="filefile" id="file">
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+                                
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control fre" id="floatingInput" placeholder="name@example.com" required name="title">
+                                    <label for="floatingInput">Enter The name of your category</label>
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="desc"></textarea>
+                                    <label for="floatingTextarea">Comments</label>
+                                  </div>
+                               
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+        
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control fre" id="floatingInput" placeholder="name@example.com" required name="name">
+                                    <label for="floatingInput">Enter Your Name</label>
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+        
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control fre" id="floatingInput" placeholder="name@example.com" required name="phone">
+                                    <label for="floatingInput">Enter Your Number</label>
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control fre" id="floatingInput" placeholder="name@example.com" required name="phoneWhat">
+                                    <label for="floatingInput">Enter Your Whats upp Number</label>
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control fre" id="floatingInput" placeholder="name@example.com" required name="location">
+                                    <label for="floatingInput">Enter Your Location</label>
+                                  </div>
+                            </div>
+                            <!--End user name field-->
+                            <!--Start user name field-->
+                            <div class="row mb-5">
+                                <div class="col-sm-6 col-md-12 ">
+                                    <input type="submit" value="Insert" class="btn  btn-success button boot"  required>
+                                </div>
+                            </div>
+                    </div>
+                    <!--End user name field-->
+                    </form>
+                </div>
+                <div class="col-md-6"><img class="landing" src="/css/assets/images/Insert.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <%- include("../includes/footer.ejs") %>
+        <%- include("../includes/end.ejs") %>
+            <script src="/js/in.js"></script>

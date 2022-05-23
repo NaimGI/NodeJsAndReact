@@ -1,0 +1,89 @@
+<%- include("../includes/navigation.ejs") %>
+
+    <div id="services" class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <h4>Amazing <em>Services &amp; Features</em> for you</h4>
+                        <img src="assets/images/heading-line-dec.png" alt="">
+                        <p>If you need the greatest collection of HTML templates for your business, please visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">TooCSS</a> Blog. If you need to have a contact form PHP script, go to <a href="https://templatemo.com/contact"
+                                target="_parent">our contact page</a> for more information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <% test.forEach((p)=>{ %>
+                    <div class="col-lg-3">
+                        <div class="service-item first-service">
+                            <div>
+                                <img class="item" src="<%=  p.image %>" alt="">
+                            </div>
+                            <h4>
+                                <%=  p.nameEn %>
+                            </h4>
+                            <p>Welcome to our service if you want to get Any information about any Category go a head.</p>
+                            <div class="text-button">
+                                <form action="/Donya/Category" method="POST">
+
+                                    <input type="hidden" value="<%= p.name %>" name="type">
+                                    <button class="check" type="submit">Go</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <% })%>
+                        <div class="col-lg-3">
+                            <div class="service-item first-service">
+                                <div>
+                                    <img class="item" src="/css/assets/images/icons8-add-4.png" alt="">
+                                </div>
+                                <h4>
+                                    Place an Ad
+                                </h4>
+                                <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+                                <div class="text-button">
+                                    <button class="check" id="check">Add Category</button>
+                                </div>
+                            </div>
+                        </div>
+                      
+
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="show" id="show">
+            <div class="modal-container" id="modal">
+                <div class="mod">
+                    <button class="close-btn" id="close">
+                    <i class="fa fa-times"></i>
+               </button>
+                    <div class="modal-header">
+                        <h3>Chek Category</h3>
+                    </div>
+                    <div class="modal-content">
+                        <p>Register with us to get offers, support and more</p>
+                        <form class="modal-form" action="/Donya/form" method="post">
+                            <div>
+                                <select name="category" id="catogory" class="form-select" aria-label="Default select example">
+                                    
+                                    <% test.forEach((p)=>{ %>
+                                    <option value="<%= p.name%>"><%=p.name%></option>
+                                    <%})%>
+                                </select>
+                            </div>
+
+                            <input type="submit" value="Submit" class="submit-btn" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include("../includes/footer.ejs") %>
+            <script src="/css/assets/js/show.js"></script>
+            <%- include("../includes/end.ejs") %>

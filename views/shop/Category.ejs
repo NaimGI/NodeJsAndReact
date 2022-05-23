@@ -1,0 +1,34 @@
+<%- include("../includes/navigation.ejs") %>
+
+    <div id="services" class="services section">
+        <!-- Start Articles -->
+        <div class="articles" id="articles">
+
+            <div class="container">
+                <% info.forEach((p) => {%>
+                    <% if( p.field.trim() === type.trim() ) {%>
+                        <div class="box">
+                            <img src="<%= p.image%>" alt="" />
+                            <div class="content">
+                                <h2>
+                                    <%=p.textEnglish%>
+                                </h2>
+                               <p></p>
+                            </div>
+                            <div class="info">
+                                <form action="/Donya/AllService" method="post">
+                                    <input type="hidden" value="<%=p.name%>" name="n">
+                                    <button class="bg-blue-500 text-white px-4 py-2 rounded-md text-1xl font-medium hover:bg-blue-700 transition duration-300">Check Category</button>
+                                </form>
+
+                            </div>
+                        </div>
+                        <% } %>
+                            <% } )%>
+
+            </div>
+        </div>
+        <div class="spikes"></div>
+    </div>
+    <!-- End Articles -->
+    <%- include("../includes/end.ejs") %>

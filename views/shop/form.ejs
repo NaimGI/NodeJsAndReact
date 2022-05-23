@@ -1,0 +1,76 @@
+<!-- Modal -->
+<%-  include("../includes/navigation.ejs") %>
+    <!-- Social Login -->
+
+    <div id="services" class="services section">
+        <div class="start ">
+            <img src="" alt="">
+            <div class="container">
+
+
+                <form class="form" action="/Donya/form" method="POST" name="f">
+
+                    <div class="mb-3">
+
+                        <label for="exampleInputEmail1" class="form-label">Choise Your Type </label>
+
+                        <select class="form-select" aria-label="Default select example" id="catogory" name="catogory">
+                    <option selected>Open this select menu</option>
+                   
+                   
+                   </select>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Choise Your catogory</label>
+                        <select class="form-select" aria-label="Default select example" name="type" id="service">
+                    <option selected>Open this select menu</option>
+                
+                    <% Real.forEach(p => {%> 
+                        <% if(p.select === p.field) {%> 
+                       <option value="<%=p.name%>"><%=p.name%></option>
+                       <%}%>
+                    <%})%>
+                  
+                   
+                
+                  </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Default file input example</label>
+                        <input class="form-control" type="file" id="formFile" name="img">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="advertise">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="number">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="whatUp">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="address">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <!-- this your template -->
+
+
+                <%- include("../includes/end.ejs") %>
